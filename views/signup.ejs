@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Twitter Signup Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="Form,flex, ,Twitter form ,sachindusahan,html,css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta property="og:title" content="Twitter Login Form" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h3 style="text-align: center"><%=errmsg%></h3>
+    <form action="/reg_submit" method="post" class="scontainer">
+      <div class="div-1">
+        <div class="sub-div-1">
+          <i class="fa fa-twitter icon"></i>
+        </div>
+      </div>
+      <div class="div-2">
+        <div class="sub-div-2">
+          <h3>SignUp For Twitter</h3>
+        </div>
+      </div>
+      <div class="div-3">
+        <div class="sub-div-3">
+          <label>First Name</label><br />
+          <input type="text" name="fname" />
+        </div>
+      </div>
+      <div class="div-3">
+        <div class="sub-div-3">
+          <label>Middle Name</label><br />
+          <input type="text" name="mname" />
+        </div>
+      </div>
+      <div class="div-3">
+        <div class="sub-div-3">
+          <label>Last Name</label><br />
+          <input type="text" name="lname" />
+        </div>
+      </div>
+      <div class="div-3">
+        <div class="sub-div-3">
+          <label>Email or mobile number</label><br />
+          <input type="text" name="email" />
+        </div>
+      </div>
+      <div class="div-4">
+        <div class="sub-div-4">
+          <label>Password</label><br />
+          <input type="password" name="pass" />
+        </div>
+      </div>
+      <div class="div-4">
+        <div class="sub-div-4">
+          <label>Date of Birth</label><br />
+          <input type="date" name="dob" />
+        </div>
+      </div>
+      <div class="div-9">
+        <div class="sub-div-9">
+          <label class="gl">Gender</label><br />
+          <input type="radio" id="male" name="gender" value="male" />
+          <label for="male">Male</label>
+
+          <input type="radio" id="female" name="gender" value="female" />
+          <label for="female">Female</label>
+
+          <input type="radio" id="dnd" name="gender" value="dnd" />
+          <label for="dnd">Don't want to Disclose !</label>
+        </div>
+      </div>
+      <div class="div-5">
+        <div class="sub-div-5">
+          <input type="submit" name="signin" value="Register" />
+        </div>
+      </div>
+      <div class="div-6">
+        <div class="sub-div-6">
+          <!-- <a href="/fpwd">Forgot password? .&nbsp;</a> -->
+          <a href="/">Already have an Account ! click to login</a>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<%- include('header.ejs') %>
+<div class="tc">
+<div class="tweetf">
+  <form action="/tweet_submit" method="post" enctype="multipart/form-data">
+    <textarea placeholder="Tweet Here" class="ti" name="post" id="" cols="25" rows="10"></textarea>
+    <br />
+    <br />
+    <input type="file" name="tweet_img" class="fi"> 
+    
+    <input class="button-9" role="button" type="submit" value="Tweet" class="si" />
+  </form>
+  </div>
+
+  <div class="tweetc">
+    
+  <% for(var i=0;i<result.length;i++){ %>
+  <div class="post">
+    <div class="post__avatar">
+      <img width="50" src="/uploads/<%=result[i].profilepic%>" alt="">
+    </div>
+
+    <div class="post__body">
+      <div class="post__header">
+        <div class="post__headerText">
+          <h3>
+            <%=result[i].fname %>
+            <span class="post__headerSpecial"
+              ><span class="material-icons post__badge"> 
+                <% if(result[i].status == 1){%> 
+                  verified
+                  <%}%>
+                </span><%=result[i].username %></span
+            >
+          </h3>
+        </div>
+        <div class="post__headerDescription">
+          <p><%=result[i].post %></p>
+        </div>
+      </div>
+      <% if(result[i].image_vdo_name != ""){ %>
+      <% if((result[i].type == "image/jpg") || (result[i].type == "image/jpeg") || (result[i].type == "image/png") || (result[i].type == "image/gif")) { %>
+        <img width="400" height="200" src="/uploads/<%=result[i].image_vdo_name%>" alt="">
+        <% } else { %>
+          <video width="400" height="200" controls  src="/uploads/<%=result[i].image_vdo_name%>"></video>
+          <% } %>
+          <% } %>
+      <div class="post__footer">
+        <span class="material-icons">  </span>
+        <span class="material-icons">  </span>
+        <span class="material-icons"> <% var d = new Date(result[i].datetime)
+          td = d.getFullYear() + "-" + d.getMonth() + "-" + d.getDate() ; %>
+        <%=td%> </span>
+      </div>
+    </div>
+  </div>
+  <% } %>
+  <% if(result.length == 0){ %>
+    <h2 style="text-align: center;">No Tweets!</h2>
+    <% }%>
+</div>
+</div>
+
+<%- include('trending_tags.ejs') %>

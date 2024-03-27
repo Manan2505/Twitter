@@ -1,0 +1,76 @@
+<%- include('header.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Edit Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="Form,flex, ,Twitter form ,sachindusahan,html,css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta property="og:title" content="Twitter Login Form" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <h3><%=msg %></h3>
+    <form
+      action="/editprofile_submit"
+      enctype="multipart/form-data"
+      method="post"
+      class="scontainer"
+    >
+      <div class="div-1">
+        <div class="sub-div-1">
+          <i class="fa fa-twitter icon"></i>
+        </div>
+      </div>
+      <div class="div-2">
+        <div class="sub-div-2">
+          <h3>Edit Profile</h3>
+        </div>
+      </div>
+      <div class="div-3">
+        <div class="sub-div-3">
+          <label>First Name</label><br />
+          <input type="text" name="fname" value="<%=result[0].fname %>" />
+        </div>
+      </div>
+      <div class="div-3">
+        <div class="sub-div-3">
+          <label>Middle Name</label><br />
+          <input type="text" name="mname" value="<%=result[0].mname %>" />
+        </div>
+      </div>
+      <div class="div-3">
+        <div class="sub-div-3">
+          <label>Last Name</label><br />
+          <input type="text" name="lname" value="<%=result[0].lname %>" />
+        </div>
+      </div>
+      <div class="div-3">
+        <div class="sub-div-3">
+          <label>Profile Pic</label>
+          <input style="margin-left: 16rem" type="file" name="profile_img" />
+        </div>
+      </div>
+      <div class="div-4">
+        <div class="sub-div-4">
+          <label>About</label><br />
+          <input name="about" id="" />
+        </div>
+      </div>
+
+      <div class="div-5">
+        <div class="sub-div-5">
+          <input type="submit" value="Update" />
+        </div>
+      </div>
+    </form>
+  </body>
+</html>
